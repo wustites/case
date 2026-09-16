@@ -302,7 +302,7 @@ Warren首席大法官回顾了英国普通法中的"不自证其罪"原则：
 
 ---
 
-## 📋 参考资料
+## 📚 参考资料
 
 - [Miranda v. Arizona, 384 U.S. 436 (1966) - 原文](https://supreme.justia.com/cases/federal/us/384/436/)
 - [Cornell Law Institute - Miranda v. Arizona](https://www.law.cornell.edu/supremecourt/text/384/436)

@@ -190,7 +190,7 @@ Warren首席大法官回顾了以下历史：
 
 ---
 
-## 📋 参考资料
+## 📚 参考资料
 
 - [Miranda v. Arizona, 384 U.S. 436 (1966) - 原文](https://supreme.justia.com/cases/federal/us/384/436/)
 - [Cornell Law Institute - Miranda v. Arizona](https://www.law.cornell.edu/supremecourt/text/384/436)
@@ -202,7 +202,7 @@ Warren首席大法官回顾了以下历史：
 
 - [`宪法第五修正案.md`](宪法第五修正案.md)
 - [`宪法第六修正案.md`](宪法第六修正案.md)
-- [`后续重要判例演变.md`](后续重要判例演变.md)
+- [`案例参考/后续重要联邦最高法院判例.md`](../案例参考/后续重要联邦最高法院判例.md)
 
 ---
 
