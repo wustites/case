@@ -5,6 +5,8 @@ desktop.ini
 *~
 *.swp
 *.tmp
+__pycache__/
+*.py[cod]
 
 # 临时草稿（内容文件请使用正式命名，不要提交未整理草稿）
 /drafts/

@@ -1,0 +1,19 @@
+name: Validate knowledge base
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate structure and links
+        run: python3 scripts/validate_repository.py
