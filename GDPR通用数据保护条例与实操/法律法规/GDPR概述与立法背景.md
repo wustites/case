@@ -91,6 +91,15 @@ GDPR 采用"属地 + 域外"双重适用标准：
 
 ---
 
+## 📚 原始来源
+
+> 以下链接于 2026 年 11 月核验可访问；法条与判决以官方最新文本为准。
+
+- [GDPR 官方文本（EUR-Lex，Regulation (EU) 2016/679）](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
+- [EDPB Guidelines 07/2020（控制者与处理者概念）](https://www.edpb.europa.eu/documents/guideline/guidelines-072020-on-the-concepts-of-controller-and-processor-in-the-gdpr_en)
+
+---
+
 ## 🔗 相关文件
 
 - [`核心原则与合法处理依据.md`](核心原则与合法处理依据.md)

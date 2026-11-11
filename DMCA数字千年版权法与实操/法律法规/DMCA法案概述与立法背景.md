@@ -58,6 +58,17 @@ DMCA 是全球最早系统回应数字版权问题的国内立法之一，为 WI
 - **支持观点**：反规避条款是 DRM 数字发行模式的法律基石；避风港制度以"通知-移除"换取责任豁免，平衡了网络中介发展与版权保护，是平台经济得以扩张的制度前提。
 - **实务观察**：DMCA 颁布后，围绕 § 1201 规则制定、§ 512 通知程序的诉讼与游说持续至今，各利益集团仍在争夺解释空间 [具体数据与统计需另行核实]。
 
+## 📚 原始来源
+
+> 以下链接于 2026 年 11 月核验可访问；法条与判决以官方最新文本为准。
+
+- [Pub. L. 105-304（DMCA 公法文本，GovInfo）](https://www.govinfo.gov/app/details/PLAW-105publ304)
+- [美国版权局：The Digital Millennium Copyright Act of 1998 — Copyright Office Summary（PDF）](https://www.copyright.gov/legislation/dmca.pdf)
+- [WIPO 版权条约（WCT）](https://www.wipo.int/en/web/treaties/ip/wct/index)
+- [WIPO 表演和录音制品条约（WPPT）](https://www.wipo.int/en/web/treaties/ip/wppt/index)
+
+---
+
 ## 🔗 相关文件
 
 - [`第512条避风港条款.md`](第512条避风港条款.md)

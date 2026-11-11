@@ -93,6 +93,18 @@
 
 ---
 
+## 📚 原始来源
+
+> 以下链接于 2026 年 11 月核验可访问；法条与判决以官方最新文本为准。
+
+- [Sony Corp. of America v. Universal City Studios, Inc., 464 U.S. 417（CourtListener）](https://www.courtlistener.com/c/U.S./464/417/)
+- [A&M Records, Inc. v. Napster, Inc., 239 F.3d 1004（CourtListener）](https://www.courtlistener.com/c/F.3d/239/1004/)
+- [MGM Studios Inc. v. Grokster, Ltd., 545 U.S. 913（CourtListener）](https://www.courtlistener.com/c/U.S./545/913/)
+- [RIAA v. Verizon Internet Services, Inc., 351 F.3d 1229（CourtListener）](https://www.courtlistener.com/c/F.3d/351/1229/)
+- [Arista Records LLC v. Lime Group LLC, 715 F. Supp. 2d 481（CourtListener）](https://www.courtlistener.com/c/F.Supp.2d/715/481/)
+
+---
+
 ## 🔗 相关文件
 
 - [`平台责任典型案例.md`](平台责任典型案例.md)
