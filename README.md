@@ -68,7 +68,7 @@
 | **链接形式** | 一律使用**相对路径** Markdown 链接，保证本地与 GitHub 均可点击 |
 | **免责声明** | 各库 `README.md` 必须包含免责声明；内容文件可按需补充 |
 
-提交前可运行 `python3 scripts/validate_repository.py`，一次检查标准目录、专题索引、导航文件数、统一页脚和 Markdown 本地链接，并提示缺少外部来源链接的内容文件；GitHub Actions 会在推送和拉取请求中执行同一校验。
+提交前可运行 `python3 scripts/validate_repository.py`，一次检查标准目录、专题索引、导航文件数、统一页脚和 Markdown 本地链接，并提示缺少外部来源链接的内容文件；GitHub Actions 会在推送和拉取请求中以 `--strict` 执行校验，缺少外部来源即视为失败。
 
 ---
 

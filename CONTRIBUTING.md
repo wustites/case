@@ -41,13 +41,13 @@ python3 scripts/validate_repository.py
 - 仓库内 Markdown 相对链接指向的文件是否存在；
 - 根导航“文件数”是否与实际一致。
 
-此外，脚本会以“提示”列出没有任何外部来源链接的内容文件，不影响通过；加 `--strict` 时视为错误：
+此外，脚本会以“提示”列出没有任何外部来源链接的内容文件；本地默认不影响通过，加 `--strict` 时视为错误。GitHub Actions 以 `--strict` 运行，因此**每个内容文件都必须至少有一个外部来源链接**：
 
 ```bash
 python3 scripts/validate_repository.py --strict
 ```
 
-推送到 GitHub 后，工作流会再次执行同一校验。
+推送到 GitHub 后，工作流会以 `--strict` 再次执行校验。
 
 ## 提交范围
 

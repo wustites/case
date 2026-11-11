@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate structure and links
-        run: python3 scripts/validate_repository.py
+        run: python3 scripts/validate_repository.py --strict
