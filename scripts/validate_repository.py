@@ -14,6 +14,7 @@ CATEGORIES = ("法律法规", "实务操作", "案例参考", "参考资料")
 IGNORED_TOP_LEVEL = {".git", ".github", "scripts", "drafts"}
 LINK_RE = re.compile(r"!?\[[^]]*\]\((?:<([^>]+)>|([^\s)]+))[^)]*\)")
 H2_RE = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
+EXTERNAL_LINK_RE = re.compile(r"\]\(<?https?://")
 
 
 def topic_directories() -> list[Path]:
@@ -52,6 +53,39 @@ def local_target(source: Path, destination: str) -> Path | None:
     if not path_part:
         return None
     return (source.parent / path_part).resolve()
+
+
+def navigation_counts(navigation: str) -> dict[Path, int]:
+    """Map topic dir -> the "文件数" number declared in the root navigation table."""
+    counts: dict[Path, int] = {}
+    rows = [line for line in navigation.splitlines() if line.startswith("|")]
+    if not rows:
+        return counts
+    header = [cell.strip() for cell in rows[0].strip("|").split("|")]
+    if "文件数" not in header:
+        return counts
+    column = header.index("文件数")
+    for row in rows[2:]:
+        cells = [cell.strip() for cell in row.strip("|").split("|")]
+        if len(cells) <= column or not cells[column].isdigit():
+            continue
+        for destination in links_in(row):
+            target = local_target(ROOT / "README.md", destination)
+            if target is not None and target.name == "README.md":
+                counts[target.parent] = int(cells[column])
+                break
+    return counts
+
+
+def source_warnings() -> list[str]:
+    """Content files without any external (http/https) link to a verifiable source."""
+    warnings: list[str] = []
+    for topic in topic_directories():
+        for category in CATEGORIES:
+            for path in sorted((topic / category).glob("*.md")):
+                if not EXTERNAL_LINK_RE.search(path.read_text(encoding="utf-8")):
+                    warnings.append(f"缺少外部来源链接：{path.relative_to(ROOT)}")
+    return warnings
 
 
 def validate() -> list[str]:
@@ -104,6 +138,16 @@ def validate() -> list[str]:
                 errors.append(f"根导航遗漏专题：{path.name}")
             for path in sorted(linked_topics - expected_topics):
                 errors.append(f"根导航包含未知专题：{path.name}")
+            for path, declared in sorted(navigation_counts(navigation).items()):
+                if path not in expected_topics:
+                    continue
+                actual = sum(
+                    1 for category in CATEGORIES for _ in (path / category).glob("*.md")
+                )
+                if declared != actual:
+                    errors.append(
+                        f"根导航文件数不符：{path.name} 标注 {declared}，实际 {actual}"
+                    )
 
     for topic in topics:
         actual_directories = {
@@ -194,7 +238,18 @@ def validate() -> list[str]:
 
 
 def main() -> int:
+    strict = "--strict" in sys.argv[1:]
     errors = validate()
+    warnings = source_warnings()
+    if strict:
+        errors.extend(warnings)
+    elif warnings:
+        print(
+            f"提示（{len(warnings)} 项，不影响通过；加 --strict 视为错误）：",
+            file=sys.stderr,
+        )
+        for warning in warnings:
+            print(f"- {warning}", file=sys.stderr)
     if errors:
         print(f"结构校验失败（{len(errors)} 项）：", file=sys.stderr)
         for error in errors:
