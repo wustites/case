@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from urllib.parse import unquote
 
@@ -13,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATEGORIES = ("法律法规", "实务操作", "案例参考", "参考资料")
 IGNORED_TOP_LEVEL = {".git", ".github", "scripts", "drafts"}
 LINK_RE = re.compile(r"!?\[[^]]*\]\((?:<([^>]+)>|([^\s)]+))[^)]*\)")
+HEADING_RE = re.compile(r"^#{1,6}\s+(.+?)\s*#*\s*$", re.MULTILINE)
 H2_RE = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
 EXTERNAL_LINK_RE = re.compile(r"\]\(<?https?://")
 
@@ -53,6 +55,61 @@ def local_target(source: Path, destination: str) -> Path | None:
     if not path_part:
         return None
     return (source.parent / path_part).resolve()
+
+
+def local_anchor(source: Path, destination: str) -> tuple[Path, str] | None:
+    """Return (target_file, decoded_fragment) for local links containing a #fragment."""
+    if destination.startswith(("http://", "https://", "mailto:", "tel:")) or "#" not in destination:
+        return None
+    path_part, fragment = destination.split("#", 1)
+    fragment = unquote(fragment).strip()
+    if not fragment:
+        return None
+    path_part = unquote(path_part.split("?", 1)[0])
+    target = source.resolve() if not path_part else (source.parent / path_part).resolve()
+    return target, fragment
+
+
+def github_slug(heading: str) -> str:
+    """Approximate GitHub Flavored Markdown heading anchor slug."""
+    text = re.sub(r"`([^`]*)`", r"\1", heading)
+    text = re.sub(r"\[([^]]+)\]\([^)]*\)", r"\1", text)
+    chars: list[str] = []
+    for ch in text.strip().lower():
+        if ch in (" ", "-"):
+            chars.append("-")
+        elif ch == "_":
+            chars.append("_")
+        elif unicodedata.category(ch)[0] in ("L", "N"):
+            chars.append(ch)
+    return "".join(chars)
+
+
+def file_anchors(path: Path, cache: dict[Path, set[str]]) -> set[str]:
+    """Return all GFM heading slugs for a Markdown file (cached)."""
+    resolved = path.resolve()
+    if resolved in cache:
+        return cache[resolved]
+    counts: dict[str, int] = {}
+    anchors: set[str] = set()
+    in_fence = False
+    for line in resolved.read_text(encoding="utf-8").splitlines():
+        if line.lstrip().startswith(("```", "~~~")):
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+        match = HEADING_RE.match(line)
+        if not match:
+            continue
+        base = github_slug(match.group(1))
+        if not base:
+            continue
+        seen = counts.get(base, 0)
+        counts[base] = seen + 1
+        anchors.add(base if seen == 0 else f"{base}-{seen}")
+    cache[resolved] = anchors
+    return anchors
 
 
 def navigation_counts(navigation: str) -> dict[Path, int]:
@@ -108,6 +165,7 @@ def validate() -> list[str]:
     markdown_files = sorted(ROOT.rglob("*.md"))
     markdown_files = [path for path in markdown_files if ".git" not in path.parts]
 
+    anchor_cache: dict[Path, set[str]] = {}
     for path in markdown_files:
         for destination in markdown_links(path):
             target = local_target(path, destination)
@@ -115,6 +173,15 @@ def validate() -> list[str]:
                 errors.append(
                     f"断链：{path.relative_to(ROOT)} -> {destination}"
                 )
+                continue
+            anchor_info = local_anchor(path, destination)
+            if anchor_info is not None:
+                anchor_file, fragment = anchor_info
+                if anchor_file.is_file() and anchor_file.suffix == ".md":
+                    if fragment.lower() not in file_anchors(anchor_file, anchor_cache):
+                        errors.append(
+                            f"无效锚点：{path.relative_to(ROOT)} -> {destination}"
+                        )
 
     root_readme = ROOT / "README.md"
     if not root_readme.is_file():
@@ -211,6 +278,15 @@ def validate() -> list[str]:
             for category in CATEGORIES
             for path in (topic / category).glob("*.md")
         }
+        seen_names: dict[str, Path] = {}
+        for path in sorted(content_files):
+            if path.name in seen_names:
+                errors.append(
+                    f"专题内重名文件：{seen_names[path.name].relative_to(ROOT)} 与 "
+                    f"{path.relative_to(ROOT)}"
+                )
+            else:
+                seen_names[path.name] = path
         for path in sorted(content_files - indexed_files):
             errors.append(
                 f"索引遗漏：{path.relative_to(ROOT)} 未列入 {topic.name}/README.md"
