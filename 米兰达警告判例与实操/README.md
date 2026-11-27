@@ -82,8 +82,8 @@
 |------|------|------|
 | 1966 | Miranda v. Arizona | 确立米兰达警告的宪法要求 |
 | 1971 | Harris v. New York | 违反米兰达规则的供述可用于弹劾 |
-| 1981 | Edwards v. Arizona | 确立"Edwards规则"：一旦主张律师权，讯问必须停止 |
-| 1985 | Oregon v. Elstad | 未告知权利的供述本身不触发"毒树之果"；后续自愿供述可采 |
+| 1981 | Edwards v. Arizona | 确立“Edwards规则”：一旦主张律师权，讯问必须停止 |
+| 1985 | Oregon v. Elstad | 未告知权利的供述本身不触发“毒树之果”；后续自愿供述可采 |
 | 2000 | Dickerson v. United States | 确认米兰达规则是宪法性规则，国会不得推翻 |
 | 2010 | Berghuis v. Thompkins | 明确弃权可以是默示的，嫌疑人必须明确主张沉默权 |
 | 2022 | Vega v. Tekoh | 米兰达规则违反不产生§1983民事诉讼救济 |

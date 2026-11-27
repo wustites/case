@@ -84,19 +84,19 @@
 
 > "The very fact of custodial interrogation exacts a heavy toll on individual liberty and trades on the weakness of individuals."
 
-> "羁押讯问本身就对个人自由造成重大损害，并利用个人的弱点。"
+> “羁押讯问本身就对个人自由造成重大损害，并利用个人的弱点。”
 
 **程序性保障的必要性**：
 
 > "Unless adequate protective devices are employed to dispel the compulsion inherent in custodial surroundings, no statement obtained from the defendant can truly be the product of his free choice."
 
-> "除非采取适当的保护措施来消除羁押环境中的强制性，否则从被告获得的任何陈述都不能真正是其自由选择的产物。"
+> “除非采取适当的保护措施来消除羁押环境中的强制性，否则从被告获得的任何陈述都不能真正是其自由选择的产物。”
 
 **必须告知的权利**：
 
 > "The person in custody must, prior to questioning, be clearly informed that he has the right to remain silent, and that anything he says will be used against him in court; he must be clearly informed that he has the right to consult with a lawyer and to have the lawyer with him during interrogation, and that, if he is indigent, a lawyer will be appointed to represent him."
 
-> "被羁押的人在讯问前必须被明确告知：他有权保持沉默；他所说的任何话都将在法庭上作为对他不利的证据；他有权在讯问前咨询律师并在讯问期间有律师在场；如果他请不起律师，将为其指定一名律师。"
+> “被羁押的人在讯问前必须被明确告知：他有权保持沉默；他所说的任何话都将在法庭上作为对他不利的证据；他有权在讯问前咨询律师并在讯问期间有律师在场；如果他请不起律师，将为其指定一名律师。”
 
 #### 3. 判决要旨
 
@@ -117,34 +117,34 @@
 **主要论点**：
 
 - 多数意见过度干预警察执法
-- 应该采用"自愿性"标准而非程序性要求
-- 米兰达规则将"放纵有罪之人"
+- 应该采用“自愿性”标准而非程序性要求
+- 米兰达规则将“放纵有罪之人”
 
 **核心观点**：
 
 > "The Court's new rules will not materially aid the administration of criminal justice. They will, however, add to the cost of that administration and will, in some cases, result in the acquittal of guilty persons."
 
-> "法院的新规则不会实质性地帮助刑事司法的运作。然而，它们会增加司法成本，并在某些案件中导致有罪之人被无罪释放。"
+> “法院的新规则不会实质性地帮助刑事司法的运作。然而，它们会增加司法成本，并在某些案件中导致有罪之人被无罪释放。”
 
 ### 2. Harlan大法官（反对）
 
 **主要论点**：
 
 - 米兰达规则缺乏宪法依据
-- 多数意见将"司法立法"推向极致
+- 多数意见将“司法立法”推向极致
 - 应该维持自愿性标准
 
 **核心观点**：
 
 > "I believe the decision of the Court represents poor constitutional law and entails harmful consequences for the country at large."
 
-> "我认为法院的判决代表了糟糕的宪法解释，并将给整个国家带来有害后果。"
+> “我认为法院的判决代表了糟糕的宪法解释，并将给整个国家带来有害后果。”
 
 ### 3. White大法官（反对）
 
 **主要论点**：
 
-- 米兰达规则将"释放大量有罪之人"
+- 米兰达规则将“释放大量有罪之人”
 - 规则过于僵化，不适应实际情况
 - 自愿性标准已经足够
 
@@ -152,7 +152,7 @@
 
 > "In some unknown number of cases the Court's rule will return a killer, a rapist or other criminal to the streets and to the environment which produced him, to repeat his crime whenever it pleases him."
 
-> "在数量未知的案件中，法院的规则将把杀人犯、强奸犯或其他罪犯送回街头和产生他的环境，让他随心所欲地重复犯罪。"
+> “在数量未知的案件中，法院的规则将把杀人犯、强奸犯或其他罪犯送回街头和产生他的环境，让他随心所欲地重复犯罪。”
 
 ---
 
@@ -160,7 +160,7 @@
 
 ### 1. 英国普通法渊源
 
-Warren首席大法官回顾了英国普通法中的"不自证其罪"原则：
+Warren首席大法官回顾了英国普通法中的“不自证其罪”原则：
 
 - **起源**：17世纪英国，反对星座法院的酷刑
 - **发展**：从反对酷刑到反对强制供述
@@ -168,7 +168,7 @@ Warren首席大法官回顾了英国普通法中的"不自证其罪"原则：
 
 ### 2. 美国宪法背景
 
-- **第五修正案**：1791年批准，规定"不得在任何刑事案件中被迫自证其罪"
+- **第五修正案**：1791年批准，规定“不得在任何刑事案件中被迫自证其罪”
 - **第十四修正案**：1868年批准，将权利法案适用于各州
 - **Malloy v. Hogan (1964)**：确认第五修正案适用于各州
 
@@ -230,7 +230,7 @@ Warren首席大法官回顾了英国普通法中的"不自证其罪"原则：
 
 - 米兰达警告成为警匪片的标志性台词
 - 大量电影、电视剧中出现米兰达警告场景
-- "你有权保持沉默"成为流行文化的一部分
+- “你有权保持沉默”成为流行文化的一部分
 
 ### 2. 公众认知
 
@@ -296,7 +296,7 @@ Warren首席大法官回顾了英国普通法中的"不自证其罪"原则：
 | Malloy v. Hogan | 1964 | 确认第五修正案适用于各州 |
 | Griffin v. California | 1965 | 禁止对被告沉默进行不利评论 |
 | Harris v. New York | 1971 | 确立弹劾例外 |
-| Edwards v. Arizona | 1981 | 确立"Edwards规则" |
+| Edwards v. Arizona | 1981 | 确立“Edwards规则” |
 | Dickerson v. United States | 2000 | 确认米兰达规则是宪法性规则 |
 | Berghuis v. Thompkins | 2010 | 明确弃权可以是默示的 |
 
